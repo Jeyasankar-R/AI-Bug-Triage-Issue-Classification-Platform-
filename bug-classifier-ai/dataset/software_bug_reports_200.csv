@@ -1,0 +1,201 @@
+BugID,Title,Category,Priority,Description
+1,Button overlaps label,UI Bug,Medium,Button overlaps label observed in production-like testing. Issue impacts normal workflow and requires investigation.
+2,Memory spike on search,Performance Issue,Low,Memory spike on search observed in production-like testing. Issue impacts normal workflow and requires investigation.
+3,App crashes on login,Crash/Error,High,App crashes on login observed in production-like testing. Issue impacts normal workflow and requires investigation.
+4,Privilege escalation risk,Security Vulnerability,Low,Privilege escalation risk observed in production-like testing. Issue impacts normal workflow and requires investigation.
+5,Export to CSV option,Feature Request,Medium,Export to CSV option observed in production-like testing. Issue impacts normal workflow and requires investigation.
+6,Incorrect totals displayed,Data Inconsistency,Low,Incorrect totals displayed observed in production-like testing. Issue impacts normal workflow and requires investigation.
+7,Webhook delivery failure,Integration Failure,Critical,Webhook delivery failure observed in production-like testing. Issue impacts normal workflow and requires investigation.
+8,Missing API key,Configuration Error,Critical,Missing API key observed in production-like testing. Issue impacts normal workflow and requires investigation.
+9,Text truncation on mobile,UI Bug,High,Text truncation on mobile observed in production-like testing. Issue impacts normal workflow and requires investigation.
+10,High CPU usage during sync,Performance Issue,Medium,High CPU usage during sync observed in production-like testing. Issue impacts normal workflow and requires investigation.
+11,Unhandled timeout error,Crash/Error,Low,Unhandled timeout error observed in production-like testing. Issue impacts normal workflow and requires investigation.
+12,Session token exposed,Security Vulnerability,High,Session token exposed observed in production-like testing. Issue impacts normal workflow and requires investigation.
+13,Add bulk edit support,Feature Request,High,Add bulk edit support observed in production-like testing. Issue impacts normal workflow and requires investigation.
+14,Incorrect totals displayed,Data Inconsistency,Critical,Incorrect totals displayed observed in production-like testing. Issue impacts normal workflow and requires investigation.
+15,Third-party auth issue,Integration Failure,Medium,Third-party auth issue observed in production-like testing. Issue impacts normal workflow and requires investigation.
+16,SSL certificate configuration issue,Configuration Error,Medium,SSL certificate configuration issue observed in production-like testing. Issue impacts normal workflow and requires investigation.
+17,Dropdown misaligned,UI Bug,Low,Dropdown misaligned observed in production-like testing. Issue impacts normal workflow and requires investigation.
+18,API response latency,Performance Issue,Low,API response latency observed in production-like testing. Issue impacts normal workflow and requires investigation.
+19,App crashes on login,Crash/Error,Medium,App crashes on login observed in production-like testing. Issue impacts normal workflow and requires investigation.
+20,Sensitive data in logs,Security Vulnerability,Medium,Sensitive data in logs observed in production-like testing. Issue impacts normal workflow and requires investigation.
+21,Add bulk edit support,Feature Request,Low,Add bulk edit support observed in production-like testing. Issue impacts normal workflow and requires investigation.
+22,Data sync discrepancy,Data Inconsistency,Medium,Data sync discrepancy observed in production-like testing. Issue impacts normal workflow and requires investigation.
+23,Payment gateway timeout,Integration Failure,Low,Payment gateway timeout observed in production-like testing. Issue impacts normal workflow and requires investigation.
+24,Misconfigured database endpoint,Configuration Error,Critical,Misconfigured database endpoint observed in production-like testing. Issue impacts normal workflow and requires investigation.
+25,Dropdown misaligned,UI Bug,Critical,Dropdown misaligned observed in production-like testing. Issue impacts normal workflow and requires investigation.
+26,API response latency,Performance Issue,Low,API response latency observed in production-like testing. Issue impacts normal workflow and requires investigation.
+27,Service restart loop,Crash/Error,High,Service restart loop observed in production-like testing. Issue impacts normal workflow and requires investigation.
+28,Sensitive data in logs,Security Vulnerability,High,Sensitive data in logs observed in production-like testing. Issue impacts normal workflow and requires investigation.
+29,Custom notification rules,Feature Request,Low,Custom notification rules observed in production-like testing. Issue impacts normal workflow and requires investigation.
+30,Data sync discrepancy,Data Inconsistency,Medium,Data sync discrepancy observed in production-like testing. Issue impacts normal workflow and requires investigation.
+31,CRM sync interruption,Integration Failure,High,CRM sync interruption observed in production-like testing. Issue impacts normal workflow and requires investigation.
+32,Incorrect cache settings,Configuration Error,Medium,Incorrect cache settings observed in production-like testing. Issue impacts normal workflow and requires investigation.
+33,Dropdown misaligned,UI Bug,Critical,Dropdown misaligned observed in production-like testing. Issue impacts normal workflow and requires investigation.
+34,Slow dashboard load,Performance Issue,Critical,Slow dashboard load observed in production-like testing. Issue impacts normal workflow and requires investigation.
+35,Service restart loop,Crash/Error,Medium,Service restart loop observed in production-like testing. Issue impacts normal workflow and requires investigation.
+36,Missing input validation,Security Vulnerability,Critical,Missing input validation observed in production-like testing. Issue impacts normal workflow and requires investigation.
+37,Enable dark mode scheduling,Feature Request,Low,Enable dark mode scheduling observed in production-like testing. Issue impacts normal workflow and requires investigation.
+38,Data sync discrepancy,Data Inconsistency,High,Data sync discrepancy observed in production-like testing. Issue impacts normal workflow and requires investigation.
+39,Third-party auth issue,Integration Failure,Low,Third-party auth issue observed in production-like testing. Issue impacts normal workflow and requires investigation.
+40,SSL certificate configuration issue,Configuration Error,Low,SSL certificate configuration issue observed in production-like testing. Issue impacts normal workflow and requires investigation.
+41,Dropdown misaligned,UI Bug,High,Dropdown misaligned observed in production-like testing. Issue impacts normal workflow and requires investigation.
+42,Delayed page rendering,Performance Issue,Critical,Delayed page rendering observed in production-like testing. Issue impacts normal workflow and requires investigation.
+43,Service restart loop,Crash/Error,Medium,Service restart loop observed in production-like testing. Issue impacts normal workflow and requires investigation.
+44,Missing input validation,Security Vulnerability,Low,Missing input validation observed in production-like testing. Issue impacts normal workflow and requires investigation.
+45,Custom notification rules,Feature Request,High,Custom notification rules observed in production-like testing. Issue impacts normal workflow and requires investigation.
+46,Data sync discrepancy,Data Inconsistency,Low,Data sync discrepancy observed in production-like testing. Issue impacts normal workflow and requires investigation.
+47,Webhook delivery failure,Integration Failure,High,Webhook delivery failure observed in production-like testing. Issue impacts normal workflow and requires investigation.
+48,Missing API key,Configuration Error,Low,Missing API key observed in production-like testing. Issue impacts normal workflow and requires investigation.
+49,Button overlaps label,UI Bug,High,Button overlaps label observed in production-like testing. Issue impacts normal workflow and requires investigation.
+50,API response latency,Performance Issue,Medium,API response latency observed in production-like testing. Issue impacts normal workflow and requires investigation.
+51,Service restart loop,Crash/Error,High,Service restart loop observed in production-like testing. Issue impacts normal workflow and requires investigation.
+52,Missing input validation,Security Vulnerability,Medium,Missing input validation observed in production-like testing. Issue impacts normal workflow and requires investigation.
+53,Advanced filtering support,Feature Request,Medium,Advanced filtering support observed in production-like testing. Issue impacts normal workflow and requires investigation.
+54,Duplicate records created,Data Inconsistency,High,Duplicate records created observed in production-like testing. Issue impacts normal workflow and requires investigation.
+55,CRM sync interruption,Integration Failure,High,CRM sync interruption observed in production-like testing. Issue impacts normal workflow and requires investigation.
+56,Missing API key,Configuration Error,Critical,Missing API key observed in production-like testing. Issue impacts normal workflow and requires investigation.
+57,Text truncation on mobile,UI Bug,Medium,Text truncation on mobile observed in production-like testing. Issue impacts normal workflow and requires investigation.
+58,Slow dashboard load,Performance Issue,Low,Slow dashboard load observed in production-like testing. Issue impacts normal workflow and requires investigation.
+59,Service restart loop,Crash/Error,Medium,Service restart loop observed in production-like testing. Issue impacts normal workflow and requires investigation.
+60,Session token exposed,Security Vulnerability,High,Session token exposed observed in production-like testing. Issue impacts normal workflow and requires investigation.
+61,Add bulk edit support,Feature Request,High,Add bulk edit support observed in production-like testing. Issue impacts normal workflow and requires investigation.
+62,Duplicate records created,Data Inconsistency,Low,Duplicate records created observed in production-like testing. Issue impacts normal workflow and requires investigation.
+63,Payment gateway timeout,Integration Failure,High,Payment gateway timeout observed in production-like testing. Issue impacts normal workflow and requires investigation.
+64,Misconfigured database endpoint,Configuration Error,Low,Misconfigured database endpoint observed in production-like testing. Issue impacts normal workflow and requires investigation.
+65,Text truncation on mobile,UI Bug,High,Text truncation on mobile observed in production-like testing. Issue impacts normal workflow and requires investigation.
+66,Slow dashboard load,Performance Issue,Medium,Slow dashboard load observed in production-like testing. Issue impacts normal workflow and requires investigation.
+67,App crashes on login,Crash/Error,High,App crashes on login observed in production-like testing. Issue impacts normal workflow and requires investigation.
+68,Privilege escalation risk,Security Vulnerability,Low,Privilege escalation risk observed in production-like testing. Issue impacts normal workflow and requires investigation.
+69,Custom notification rules,Feature Request,Low,Custom notification rules observed in production-like testing. Issue impacts normal workflow and requires investigation.
+70,Duplicate records created,Data Inconsistency,Low,Duplicate records created observed in production-like testing. Issue impacts normal workflow and requires investigation.
+71,Email provider connection error,Integration Failure,Low,Email provider connection error observed in production-like testing. Issue impacts normal workflow and requires investigation.
+72,Missing API key,Configuration Error,High,Missing API key observed in production-like testing. Issue impacts normal workflow and requires investigation.
+73,Dark mode contrast issue,UI Bug,Low,Dark mode contrast issue observed in production-like testing. Issue impacts normal workflow and requires investigation.
+74,Slow dashboard load,Performance Issue,Low,Slow dashboard load observed in production-like testing. Issue impacts normal workflow and requires investigation.
+75,Null pointer exception,Crash/Error,Critical,Null pointer exception observed in production-like testing. Issue impacts normal workflow and requires investigation.
+76,Session token exposed,Security Vulnerability,High,Session token exposed observed in production-like testing. Issue impacts normal workflow and requires investigation.
+77,Add bulk edit support,Feature Request,Critical,Add bulk edit support observed in production-like testing. Issue impacts normal workflow and requires investigation.
+78,Data sync discrepancy,Data Inconsistency,Low,Data sync discrepancy observed in production-like testing. Issue impacts normal workflow and requires investigation.
+79,Webhook delivery failure,Integration Failure,Critical,Webhook delivery failure observed in production-like testing. Issue impacts normal workflow and requires investigation.
+80,Misconfigured database endpoint,Configuration Error,Medium,Misconfigured database endpoint observed in production-like testing. Issue impacts normal workflow and requires investigation.
+81,Button overlaps label,UI Bug,Medium,Button overlaps label observed in production-like testing. Issue impacts normal workflow and requires investigation.
+82,Memory spike on search,Performance Issue,High,Memory spike on search observed in production-like testing. Issue impacts normal workflow and requires investigation.
+83,Null pointer exception,Crash/Error,Low,Null pointer exception observed in production-like testing. Issue impacts normal workflow and requires investigation.
+84,Missing input validation,Security Vulnerability,Low,Missing input validation observed in production-like testing. Issue impacts normal workflow and requires investigation.
+85,Custom notification rules,Feature Request,Medium,Custom notification rules observed in production-like testing. Issue impacts normal workflow and requires investigation.
+86,Data sync discrepancy,Data Inconsistency,Low,Data sync discrepancy observed in production-like testing. Issue impacts normal workflow and requires investigation.
+87,Third-party auth issue,Integration Failure,Medium,Third-party auth issue observed in production-like testing. Issue impacts normal workflow and requires investigation.
+88,Misconfigured database endpoint,Configuration Error,Low,Misconfigured database endpoint observed in production-like testing. Issue impacts normal workflow and requires investigation.
+89,Text truncation on mobile,UI Bug,Critical,Text truncation on mobile observed in production-like testing. Issue impacts normal workflow and requires investigation.
+90,Slow dashboard load,Performance Issue,Critical,Slow dashboard load observed in production-like testing. Issue impacts normal workflow and requires investigation.
+91,Unhandled timeout error,Crash/Error,Medium,Unhandled timeout error observed in production-like testing. Issue impacts normal workflow and requires investigation.
+92,Missing input validation,Security Vulnerability,Medium,Missing input validation observed in production-like testing. Issue impacts normal workflow and requires investigation.
+93,Advanced filtering support,Feature Request,Low,Advanced filtering support observed in production-like testing. Issue impacts normal workflow and requires investigation.
+94,Data sync discrepancy,Data Inconsistency,High,Data sync discrepancy observed in production-like testing. Issue impacts normal workflow and requires investigation.
+95,Payment gateway timeout,Integration Failure,Low,Payment gateway timeout observed in production-like testing. Issue impacts normal workflow and requires investigation.
+96,Misconfigured database endpoint,Configuration Error,Medium,Misconfigured database endpoint observed in production-like testing. Issue impacts normal workflow and requires investigation.
+97,Text truncation on mobile,UI Bug,Medium,Text truncation on mobile observed in production-like testing. Issue impacts normal workflow and requires investigation.
+98,Memory spike on search,Performance Issue,Medium,Memory spike on search observed in production-like testing. Issue impacts normal workflow and requires investigation.
+99,Export process failure,Crash/Error,High,Export process failure observed in production-like testing. Issue impacts normal workflow and requires investigation.
+100,Privilege escalation risk,Security Vulnerability,Critical,Privilege escalation risk observed in production-like testing. Issue impacts normal workflow and requires investigation.
+101,Enable dark mode scheduling,Feature Request,Medium,Enable dark mode scheduling observed in production-like testing. Issue impacts normal workflow and requires investigation.
+102,Data sync discrepancy,Data Inconsistency,Critical,Data sync discrepancy observed in production-like testing. Issue impacts normal workflow and requires investigation.
+103,Third-party auth issue,Integration Failure,Medium,Third-party auth issue observed in production-like testing. Issue impacts normal workflow and requires investigation.
+104,Incorrect cache settings,Configuration Error,Low,Incorrect cache settings observed in production-like testing. Issue impacts normal workflow and requires investigation.
+105,Dropdown misaligned,UI Bug,Medium,Dropdown misaligned observed in production-like testing. Issue impacts normal workflow and requires investigation.
+106,Slow dashboard load,Performance Issue,Low,Slow dashboard load observed in production-like testing. Issue impacts normal workflow and requires investigation.
+107,Unhandled timeout error,Crash/Error,High,Unhandled timeout error observed in production-like testing. Issue impacts normal workflow and requires investigation.
+108,Sensitive data in logs,Security Vulnerability,High,Sensitive data in logs observed in production-like testing. Issue impacts normal workflow and requires investigation.
+109,Export to CSV option,Feature Request,Low,Export to CSV option observed in production-like testing. Issue impacts normal workflow and requires investigation.
+110,Timezone mismatch in reports,Data Inconsistency,Critical,Timezone mismatch in reports observed in production-like testing. Issue impacts normal workflow and requires investigation.
+111,Payment gateway timeout,Integration Failure,Medium,Payment gateway timeout observed in production-like testing. Issue impacts normal workflow and requires investigation.
+112,Incorrect cache settings,Configuration Error,Low,Incorrect cache settings observed in production-like testing. Issue impacts normal workflow and requires investigation.
+113,Text truncation on mobile,UI Bug,High,Text truncation on mobile observed in production-like testing. Issue impacts normal workflow and requires investigation.
+114,Delayed page rendering,Performance Issue,Critical,Delayed page rendering observed in production-like testing. Issue impacts normal workflow and requires investigation.
+115,Export process failure,Crash/Error,Critical,Export process failure observed in production-like testing. Issue impacts normal workflow and requires investigation.
+116,Missing input validation,Security Vulnerability,Low,Missing input validation observed in production-like testing. Issue impacts normal workflow and requires investigation.
+117,Export to CSV option,Feature Request,Critical,Export to CSV option observed in production-like testing. Issue impacts normal workflow and requires investigation.
+118,Timezone mismatch in reports,Data Inconsistency,Low,Timezone mismatch in reports observed in production-like testing. Issue impacts normal workflow and requires investigation.
+119,Payment gateway timeout,Integration Failure,Critical,Payment gateway timeout observed in production-like testing. Issue impacts normal workflow and requires investigation.
+120,Invalid environment variable,Configuration Error,Critical,Invalid environment variable observed in production-like testing. Issue impacts normal workflow and requires investigation.
+121,Dark mode contrast issue,UI Bug,Medium,Dark mode contrast issue observed in production-like testing. Issue impacts normal workflow and requires investigation.
+122,Delayed page rendering,Performance Issue,Critical,Delayed page rendering observed in production-like testing. Issue impacts normal workflow and requires investigation.
+123,Service restart loop,Crash/Error,High,Service restart loop observed in production-like testing. Issue impacts normal workflow and requires investigation.
+124,Sensitive data in logs,Security Vulnerability,Low,Sensitive data in logs observed in production-like testing. Issue impacts normal workflow and requires investigation.
+125,Add bulk edit support,Feature Request,Medium,Add bulk edit support observed in production-like testing. Issue impacts normal workflow and requires investigation.
+126,Timezone mismatch in reports,Data Inconsistency,Medium,Timezone mismatch in reports observed in production-like testing. Issue impacts normal workflow and requires investigation.
+127,Webhook delivery failure,Integration Failure,Low,Webhook delivery failure observed in production-like testing. Issue impacts normal workflow and requires investigation.
+128,Missing API key,Configuration Error,Medium,Missing API key observed in production-like testing. Issue impacts normal workflow and requires investigation.
+129,Text truncation on mobile,UI Bug,Medium,Text truncation on mobile observed in production-like testing. Issue impacts normal workflow and requires investigation.
+130,Slow dashboard load,Performance Issue,Critical,Slow dashboard load observed in production-like testing. Issue impacts normal workflow and requires investigation.
+131,Unhandled timeout error,Crash/Error,Medium,Unhandled timeout error observed in production-like testing. Issue impacts normal workflow and requires investigation.
+132,Missing input validation,Security Vulnerability,Critical,Missing input validation observed in production-like testing. Issue impacts normal workflow and requires investigation.
+133,Add bulk edit support,Feature Request,High,Add bulk edit support observed in production-like testing. Issue impacts normal workflow and requires investigation.
+134,Incorrect totals displayed,Data Inconsistency,Medium,Incorrect totals displayed observed in production-like testing. Issue impacts normal workflow and requires investigation.
+135,CRM sync interruption,Integration Failure,Critical,CRM sync interruption observed in production-like testing. Issue impacts normal workflow and requires investigation.
+136,Misconfigured database endpoint,Configuration Error,Medium,Misconfigured database endpoint observed in production-like testing. Issue impacts normal workflow and requires investigation.
+137,Modal closes unexpectedly,UI Bug,Medium,Modal closes unexpectedly observed in production-like testing. Issue impacts normal workflow and requires investigation.
+138,Delayed page rendering,Performance Issue,Critical,Delayed page rendering observed in production-like testing. Issue impacts normal workflow and requires investigation.
+139,App crashes on login,Crash/Error,Medium,App crashes on login observed in production-like testing. Issue impacts normal workflow and requires investigation.
+140,Sensitive data in logs,Security Vulnerability,Critical,Sensitive data in logs observed in production-like testing. Issue impacts normal workflow and requires investigation.
+141,Enable dark mode scheduling,Feature Request,High,Enable dark mode scheduling observed in production-like testing. Issue impacts normal workflow and requires investigation.
+142,Timezone mismatch in reports,Data Inconsistency,Critical,Timezone mismatch in reports observed in production-like testing. Issue impacts normal workflow and requires investigation.
+143,CRM sync interruption,Integration Failure,High,CRM sync interruption observed in production-like testing. Issue impacts normal workflow and requires investigation.
+144,Incorrect cache settings,Configuration Error,Low,Incorrect cache settings observed in production-like testing. Issue impacts normal workflow and requires investigation.
+145,Button overlaps label,UI Bug,High,Button overlaps label observed in production-like testing. Issue impacts normal workflow and requires investigation.
+146,Delayed page rendering,Performance Issue,Low,Delayed page rendering observed in production-like testing. Issue impacts normal workflow and requires investigation.
+147,App crashes on login,Crash/Error,Medium,App crashes on login observed in production-like testing. Issue impacts normal workflow and requires investigation.
+148,Privilege escalation risk,Security Vulnerability,High,Privilege escalation risk observed in production-like testing. Issue impacts normal workflow and requires investigation.
+149,Enable dark mode scheduling,Feature Request,High,Enable dark mode scheduling observed in production-like testing. Issue impacts normal workflow and requires investigation.
+150,Stale cache data shown,Data Inconsistency,Low,Stale cache data shown observed in production-like testing. Issue impacts normal workflow and requires investigation.
+151,Webhook delivery failure,Integration Failure,Critical,Webhook delivery failure observed in production-like testing. Issue impacts normal workflow and requires investigation.
+152,Misconfigured database endpoint,Configuration Error,Critical,Misconfigured database endpoint observed in production-like testing. Issue impacts normal workflow and requires investigation.
+153,Dark mode contrast issue,UI Bug,Critical,Dark mode contrast issue observed in production-like testing. Issue impacts normal workflow and requires investigation.
+154,API response latency,Performance Issue,Critical,API response latency observed in production-like testing. Issue impacts normal workflow and requires investigation.
+155,Null pointer exception,Crash/Error,Critical,Null pointer exception observed in production-like testing. Issue impacts normal workflow and requires investigation.
+156,Missing input validation,Security Vulnerability,Low,Missing input validation observed in production-like testing. Issue impacts normal workflow and requires investigation.
+157,Add bulk edit support,Feature Request,Critical,Add bulk edit support observed in production-like testing. Issue impacts normal workflow and requires investigation.
+158,Incorrect totals displayed,Data Inconsistency,Low,Incorrect totals displayed observed in production-like testing. Issue impacts normal workflow and requires investigation.
+159,Webhook delivery failure,Integration Failure,Low,Webhook delivery failure observed in production-like testing. Issue impacts normal workflow and requires investigation.
+160,Missing API key,Configuration Error,Medium,Missing API key observed in production-like testing. Issue impacts normal workflow and requires investigation.
+161,Dropdown misaligned,UI Bug,High,Dropdown misaligned observed in production-like testing. Issue impacts normal workflow and requires investigation.
+162,Memory spike on search,Performance Issue,Medium,Memory spike on search observed in production-like testing. Issue impacts normal workflow and requires investigation.
+163,App crashes on login,Crash/Error,Critical,App crashes on login observed in production-like testing. Issue impacts normal workflow and requires investigation.
+164,Sensitive data in logs,Security Vulnerability,Medium,Sensitive data in logs observed in production-like testing. Issue impacts normal workflow and requires investigation.
+165,Advanced filtering support,Feature Request,Medium,Advanced filtering support observed in production-like testing. Issue impacts normal workflow and requires investigation.
+166,Data sync discrepancy,Data Inconsistency,Low,Data sync discrepancy observed in production-like testing. Issue impacts normal workflow and requires investigation.
+167,Third-party auth issue,Integration Failure,Medium,Third-party auth issue observed in production-like testing. Issue impacts normal workflow and requires investigation.
+168,Invalid environment variable,Configuration Error,Critical,Invalid environment variable observed in production-like testing. Issue impacts normal workflow and requires investigation.
+169,Modal closes unexpectedly,UI Bug,High,Modal closes unexpectedly observed in production-like testing. Issue impacts normal workflow and requires investigation.
+170,API response latency,Performance Issue,Critical,API response latency observed in production-like testing. Issue impacts normal workflow and requires investigation.
+171,Export process failure,Crash/Error,High,Export process failure observed in production-like testing. Issue impacts normal workflow and requires investigation.
+172,Privilege escalation risk,Security Vulnerability,Medium,Privilege escalation risk observed in production-like testing. Issue impacts normal workflow and requires investigation.
+173,Add bulk edit support,Feature Request,Low,Add bulk edit support observed in production-like testing. Issue impacts normal workflow and requires investigation.
+174,Incorrect totals displayed,Data Inconsistency,Low,Incorrect totals displayed observed in production-like testing. Issue impacts normal workflow and requires investigation.
+175,CRM sync interruption,Integration Failure,Low,CRM sync interruption observed in production-like testing. Issue impacts normal workflow and requires investigation.
+176,Misconfigured database endpoint,Configuration Error,Medium,Misconfigured database endpoint observed in production-like testing. Issue impacts normal workflow and requires investigation.
+177,Button overlaps label,UI Bug,Critical,Button overlaps label observed in production-like testing. Issue impacts normal workflow and requires investigation.
+178,Slow dashboard load,Performance Issue,High,Slow dashboard load observed in production-like testing. Issue impacts normal workflow and requires investigation.
+179,App crashes on login,Crash/Error,High,App crashes on login observed in production-like testing. Issue impacts normal workflow and requires investigation.
+180,Privilege escalation risk,Security Vulnerability,Low,Privilege escalation risk observed in production-like testing. Issue impacts normal workflow and requires investigation.
+181,Add bulk edit support,Feature Request,Critical,Add bulk edit support observed in production-like testing. Issue impacts normal workflow and requires investigation.
+182,Duplicate records created,Data Inconsistency,Medium,Duplicate records created observed in production-like testing. Issue impacts normal workflow and requires investigation.
+183,Payment gateway timeout,Integration Failure,High,Payment gateway timeout observed in production-like testing. Issue impacts normal workflow and requires investigation.
+184,Missing API key,Configuration Error,Critical,Missing API key observed in production-like testing. Issue impacts normal workflow and requires investigation.
+185,Button overlaps label,UI Bug,Critical,Button overlaps label observed in production-like testing. Issue impacts normal workflow and requires investigation.
+186,Delayed page rendering,Performance Issue,Medium,Delayed page rendering observed in production-like testing. Issue impacts normal workflow and requires investigation.
+187,App crashes on login,Crash/Error,Critical,App crashes on login observed in production-like testing. Issue impacts normal workflow and requires investigation.
+188,Sensitive data in logs,Security Vulnerability,Low,Sensitive data in logs observed in production-like testing. Issue impacts normal workflow and requires investigation.
+189,Export to CSV option,Feature Request,Low,Export to CSV option observed in production-like testing. Issue impacts normal workflow and requires investigation.
+190,Incorrect totals displayed,Data Inconsistency,Medium,Incorrect totals displayed observed in production-like testing. Issue impacts normal workflow and requires investigation.
+191,Webhook delivery failure,Integration Failure,Low,Webhook delivery failure observed in production-like testing. Issue impacts normal workflow and requires investigation.
+192,Invalid environment variable,Configuration Error,Critical,Invalid environment variable observed in production-like testing. Issue impacts normal workflow and requires investigation.
+193,Dropdown misaligned,UI Bug,High,Dropdown misaligned observed in production-like testing. Issue impacts normal workflow and requires investigation.
+194,Memory spike on search,Performance Issue,Low,Memory spike on search observed in production-like testing. Issue impacts normal workflow and requires investigation.
+195,Export process failure,Crash/Error,Critical,Export process failure observed in production-like testing. Issue impacts normal workflow and requires investigation.
+196,Session token exposed,Security Vulnerability,Critical,Session token exposed observed in production-like testing. Issue impacts normal workflow and requires investigation.
+197,Advanced filtering support,Feature Request,High,Advanced filtering support observed in production-like testing. Issue impacts normal workflow and requires investigation.
+198,Stale cache data shown,Data Inconsistency,Low,Stale cache data shown observed in production-like testing. Issue impacts normal workflow and requires investigation.
+199,Third-party auth issue,Integration Failure,Critical,Third-party auth issue observed in production-like testing. Issue impacts normal workflow and requires investigation.
+200,Misconfigured database endpoint,Configuration Error,Low,Misconfigured database endpoint observed in production-like testing. Issue impacts normal workflow and requires investigation.

@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Bug Triage & Classification Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #080b11;
+            --card-bg: rgba(17, 25, 40, 0.65);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.3);
+            --accent: #a855f7;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #06b6d4;
+            --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.15) 0px, transparent 50%);
+            color: var(--text-primary);
+            font-family: var(--font-family);
+            min-height: 100vh;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo-area h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 30%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.025em;
+        }
+
+        .logo-area p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .status-badge {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            color: var(--success);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--success);
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 10px var(--success);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1.2fr 1.8fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 0.75rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        input[type="text"], textarea {
+            background: rgba(17, 25, 40, 0.5);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 0.75rem;
+            color: var(--text-primary);
+            font-family: var(--font-family);
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 8px var(--primary-glow);
+            background: rgba(17, 25, 40, 0.8);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.85rem;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 15px var(--primary-glow);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+            filter: brightness(1.1);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Preset templates */
+        .templates-box {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+
+        .template-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .template-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.15);
+            color: #fff;
+        }
+
+        /* Results panel */
+        .results-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .metric-value {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        /* Severity styling */
+        .sev-Critical { color: var(--danger); text-shadow: 0 0 10px rgba(239, 68, 68, 0.3); }
+        .sev-High { color: var(--warning); text-shadow: 0 0 10px rgba(245, 158, 11, 0.3); }
+        .sev-Medium { color: #facc15; text-shadow: 0 0 10px rgba(250, 204, 21, 0.3); }
+        .sev-Low { color: var(--info); text-shadow: 0 0 10px rgba(6, 182, 212, 0.3); }
+
+        /* Confidence bar */
+        .confidence-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            width: 100%;
+        }
+
+        .confidence-bar-bg {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 9999px;
+            height: 8px;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .confidence-bar-fill {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 9999px;
+            height: 100%;
+            width: 0%;
+            transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Hints list */
+        .hints-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .hint-item {
+            display: flex;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 0.75rem;
+        }
+
+        .hint-icon {
+            color: var(--success);
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+
+        /* Duplicates panel */
+        .duplicate-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 0.75rem;
+            gap: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .duplicate-item:hover {
+            border-color: rgba(99, 102, 241, 0.3);
+            background: rgba(99, 102, 241, 0.03);
+        }
+
+        .dup-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            min-width: 0;
+        }
+
+        .dup-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .dup-id {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .dup-score {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            background: rgba(168, 85, 247, 0.1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            flex-shrink: 0;
+        }
+
+        /* Empty state & Loading */
+        .empty-state {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            padding: 3rem;
+            color: var(--text-secondary);
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            text-align: center;
+            min-height: 250px;
+        }
+
+        .empty-icon {
+            font-size: 2.5rem;
+            opacity: 0.5;
+        }
+
+        .loading-spinner {
+            border: 3px solid rgba(255, 255, 255, 0.05);
+            border-top: 3px solid var(--primary);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Feedback modal / correction interface */
+        .feedback-row {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 0.5rem;
+        }
+
+        .feedback-link {
+            font-size: 0.75rem;
+            color: var(--primary);
+            text-decoration: underline;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: inherit;
+        }
+
+        .feedback-link:hover {
+            color: var(--accent);
+        }
+
+        .feedback-form {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .feedback-selects {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+        }
+
+        select {
+            background: rgba(17, 25, 40, 0.8);
+            border: 1px solid var(--card-border);
+            border-radius: 6px;
+            padding: 0.5rem;
+            color: var(--text-primary);
+            font-family: var(--font-family);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-area">
+                <h1>AI Bug Triage Platform</h1>
+                <p>Real-time machine learning issue classifier & diagnostics</p>
+            </div>
+            <div class="status-badge">
+                <span class="status-dot"></span>
+                <span>API Status: Connected</span>
+            </div>
+        </header>
+
+        <main>
+            <!-- Left Side: Inputs -->
+            <div class="card">
+                <div class="card-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                    <span>Analyze Bug Report</span>
+                </div>
+
+                <div class="templates-box">
+                    <label>Quick Test Templates</label>
+                    <div class="templates-grid">
+                        <button type="button" class="template-btn" onclick="loadTemplate('ui')">🎨 UI Layout Issue</button>
+                        <button type="button" class="template-btn" onclick="loadTemplate('crash')">💥 Out of Memory Exception</button>
+                        <button type="button" class="template-btn" onclick="loadTemplate('sec')">🔑 SQL Injection Leak</button>
+                        <button type="button" class="template-btn" onclick="loadTemplate('perf')">⚡ Long Rendering Delay</button>
+                    </div>
+                </div>
+
+                <form id="analyze-form" class="card" style="box-shadow:none; padding:0; background:none; border:none;" onsubmit="handleAnalyze(event)">
+                    <div class="form-group">
+                        <label for="bug-title">Bug Title / Short Summary *</label>
+                        <input type="text" id="bug-title" placeholder="e.g., Save settings button does not respond on click" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bug-desc">Detailed Description *</label>
+                        <textarea id="bug-desc" placeholder="Provide full details of the issue..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bug-steps">Steps to Reproduce</label>
+                        <textarea id="bug-steps" placeholder="1. Go to settings page..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bug-env">Environment</label>
+                        <input type="text" id="bug-env" placeholder="e.g., macOS Sonoma, Chrome 122">
+                    </div>
+
+                    <button type="submit" id="submit-btn" class="btn">
+                        <span>Analyze Issue</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Right Side: Diagnostics -->
+            <div class="card" id="results-card">
+                <div class="card-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    <span>Diagnostics & Inference</span>
+                </div>
+
+                <!-- Empty State -->
+                <div id="results-empty" class="empty-state">
+                    <div class="empty-icon">🤖</div>
+                    <h3>Ready for Classification</h3>
+                    <p>Enter a bug report or choose a quick template on the left to evaluate classification parameters.</p>
+                </div>
+
+                <!-- Loading State -->
+                <div id="results-loading" class="empty-state hidden">
+                    <div class="loading-spinner"></div>
+                    <h3>Running AI Inference</h3>
+                    <p>Extracting TF-IDF features and computing class probabilities...</p>
+                </div>
+
+                <!-- Content State -->
+                <div id="results-content" class="results-container hidden">
+                    <div class="results-grid">
+                        <div class="metric-card">
+                            <span class="metric-label">Predicted Category</span>
+                            <span class="metric-value" id="res-category">-</span>
+                            <div class="confidence-container" style="margin-top:0.5rem;">
+                                <div style="display:flex; justify-content:space-between; font-size:0.75rem;">
+                                    <span style="color:var(--text-secondary)">Model Confidence</span>
+                                    <span style="font-weight:700;" id="res-confidence">0%</span>
+                                </div>
+                                <div class="confidence-bar-bg">
+                                    <div class="confidence-bar-fill" id="res-confidence-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="metric-card">
+                            <span class="metric-label">Severity Level</span>
+                            <span class="metric-value" id="res-severity">-</span>
+                        </div>
+                    </div>
+
+                    <!-- Actionable Suggestions -->
+                    <div class="card" style="box-shadow:none; background:rgba(255,255,255,0.01); border-color:rgba(255,255,255,0.04);">
+                        <label style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-secondary)">Root Cause Diagnostic Hints</label>
+                        <ul class="hints-list" id="res-hints" style="margin-top:0.5rem;">
+                            <!-- Dynamically populated -->
+                        </ul>
+                    </div>
+
+                    <!-- Duplicate Detections -->
+                    <div class="card" style="box-shadow:none; background:rgba(255,255,255,0.01); border-color:rgba(255,255,255,0.04);">
+                        <label style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-secondary)">Potential Duplicate Reports</label>
+                        <div id="res-duplicates" style="display:flex; flex-direction:column; gap:0.5rem; margin-top:0.5rem;">
+                            <!-- Dynamically populated -->
+                        </div>
+                    </div>
+
+                    <!-- User Feedback & Reinforcement -->
+                    <div class="feedback-row">
+                        <button class="feedback-link" onclick="toggleFeedbackForm()">Incorrect Prediction? Log Feedback</button>
+                    </div>
+                    <div id="feedback-panel" class="feedback-form hidden">
+                        <label style="font-size:0.75rem; color:#fff; font-weight:700;">Suggest Corrections</label>
+                        <div class="feedback-selects">
+                            <select id="fb-category">
+                                <option value="">-- Correct Category --</option>
+                                <option value="UI Bug">UI Bug</option>
+                                <option value="Performance Issue">Performance Issue</option>
+                                <option value="Crash/Error">Crash/Error</option>
+                                <option value="Security Vulnerability">Security Vulnerability</option>
+                                <option value="Feature Request">Feature Request</option>
+                                <option value="Integration Failure">Integration Failure</option>
+                                <option value="Configuration Error">Configuration Error</option>
+                                <option value="Data Inconsistency">Data Inconsistency</option>
+                            </select>
+                            <select id="fb-severity">
+                                <option value="">-- Correct Severity --</option>
+                                <option value="Low">Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="High">High</option>
+                                <option value="Critical">Critical</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn" style="padding:0.4rem; font-size:0.8rem; margin-top:0.25rem;" onclick="submitFeedback()">Submit Feedback</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const API_BASE = window.location.origin;
+
+        // Templates data
+        const templates = {
+            ui: {
+                title: "Save Changes modal layout overlapping input field",
+                description: "When opening the profile edit dialog, the modal title overlays the input box of username. The submit button is also partially hidden under the bottom boundary.",
+                steps: "1. Navigate to Edit Profile\n2. Open modal on 1024x768 screen resolution\n3. Observe boundary alignment",
+                env: "iOS 17, Chrome Mobile, screen width < 768px"
+            },
+            crash: {
+                title: "App crashed with OutOfMemoryError in document parsing utility",
+                description: "Uploading high resolution PNG and PDF files (15MB+) results in immediate JVM crash and heap allocation exceptions in thread pool handler.",
+                steps: "1. Navigate to attachments page\n2. Select 25MB report PDF\n3. Click upload\n4. Application shuts down immediately",
+                env: "Production API node, JVM 17"
+            },
+            sec: {
+                title: "SQL injection vulnerability in user profile search engine",
+                description: "Raw SQL query concatenation observed in ProfileController search function. Sanitization function is bypassed when passing escape tags.",
+                steps: "1. Open search panel\n2. Enter: ' OR '1'='1' --\n3. Verify that details of all profiles are returned",
+                env: "PostgreSQL v15, Node API runtime"
+            },
+            perf: {
+                title: "Dashboard loading slow and causing browser rendering freeze",
+                description: "Loading transactions summary list takes over 90 seconds. Thread locking spikes CPU utilization to 100% on active threads.",
+                steps: "1. Load dashboard home page\n2. Click transactions tab\n3. Browser tab hangs for 90-120 seconds",
+                env: "macOS 14, Safari 17.2"
+            }
+        };
+
+        function loadTemplate(key) {
+            const data = templates[key];
+            if (!data) return;
+
+            document.getElementById('bug-title').value = data.title;
+            document.getElementById('bug-desc').value = data.description;
+            document.getElementById('bug-steps').value = data.steps;
+            document.getElementById('bug-env').value = data.env;
+        }
+
+        async function handleAnalyze(e) {
+            e.preventDefault();
+
+            const title = document.getElementById('bug-title').value;
+            const description = document.getElementById('bug-desc').value;
+            const steps_to_reproduce = document.getElementById('bug-steps').value;
+            const environment = document.getElementById('bug-env').value;
+
+            // Show loading state
+            document.getElementById('results-empty').classList.add('hidden');
+            document.getElementById('results-content').classList.add('hidden');
+            document.getElementById('results-loading').classList.remove('hidden');
+            document.getElementById('feedback-panel').classList.add('hidden');
+
+            try {
+                const response = await fetch(`${API_BASE}/analyze`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ title, description, steps_to_reproduce, environment })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API returned ${response.status}: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                populateResults(data);
+
+            } catch (err) {
+                alert(`Error analyzing bug: ${err.message}`);
+                document.getElementById('results-empty').classList.remove('hidden');
+                document.getElementById('results-loading').classList.add('hidden');
+            }
+        }
+
+        function populateResults(data) {
+            document.getElementById('results-loading').classList.add('hidden');
+            document.getElementById('results-content').classList.remove('hidden');
+
+            // Category & confidence
+            document.getElementById('res-category').innerText = data.category;
+            const confidencePercentage = Math.round(data.confidence_score * 100);
+            document.getElementById('res-confidence').innerText = `${confidencePercentage}%`;
+            document.getElementById('res-confidence-bar').style.width = `${confidencePercentage}%`;
+
+            // Severity
+            const sevEl = document.getElementById('res-severity');
+            sevEl.innerText = data.severity_prediction;
+            sevEl.className = 'metric-value'; // Reset classes
+            sevEl.classList.add(`sev-${data.severity_prediction}`);
+
+            // Hints
+            const hintsList = document.getElementById('res-hints');
+            hintsList.innerHTML = '';
+            data.root_cause_hints.forEach(hint => {
+                const li = document.createElement('li');
+                li.className = 'hint-item';
+                li.innerHTML = `<span class="hint-icon">✓</span><div>${hint}</div>`;
+                hintsList.appendChild(li);
+            });
+
+            // Duplicates
+            const dupList = document.getElementById('res-duplicates');
+            dupList.innerHTML = '';
+            if (data.potential_duplicates && data.potential_duplicates.length > 0) {
+                data.potential_duplicates.forEach(dup => {
+                    const matchScore = Math.round(dup.similarity_score * 100);
+                    const div = document.createElement('div');
+                    div.className = 'duplicate-item';
+                    div.innerHTML = `
+                        <div class="dup-details">
+                            <span class="dup-title" title="${dup.title}">${dup.title}</span>
+                            <span class="dup-id">ID: #${dup.bug_id}</span>
+                        </div>
+                        <span class="dup-score">${matchScore}% Match</span>
+                    `;
+                    dupList.appendChild(div);
+                });
+            } else {
+                dupList.innerHTML = '<div style="font-size:0.85rem; color:var(--text-secondary); padding:0.5rem; text-align:center;">No similar duplicate reports found.</div>';
+            }
+        }
+
+        function toggleFeedbackForm() {
+            const panel = document.getElementById('feedback-panel');
+            panel.classList.toggle('hidden');
+        }
+
+        async function submitFeedback() {
+            const correct_category = document.getElementById('fb-category').value;
+            const correct_severity = document.getElementById('fb-severity').value;
+            const bug_id = Math.floor(Math.random() * 1000000); // Random mock ID for demo testing feedback
+
+            if (!correct_category && !correct_severity) {
+                alert('Please select a category or severity adjustment.');
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE}/feedback`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ bug_id, correct_category, correct_severity })
+                });
+
+                if (response.ok) {
+                    alert('Correction feedback submitted successfully! It will be used in the next training cycle.');
+                    document.getElementById('feedback-panel').classList.add('hidden');
+                } else {
+                    alert('Failed to submit feedback.');
+                }
+            } catch (err) {
+                alert(`Error submitting feedback: ${err.message}`);
+            }
+        }
+    </script>
+</body>
+</html>

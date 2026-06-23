@@ -1,0 +1,16 @@
+id,title,description,steps_to_reproduce,environment,severity,category
+1,Button click does not open modal,"When clicking on the 'Submit' button on the dashboard, nothing happens and the page remains static.","1. Navigate to dashboard
+2. Click 'Submit' button
+3. Observe no modal opens","Windows 11, Chrome 120",High,UI Bug
+2,Database connection timeout during load spike,"The backend log shows multiple connection timeout errors during high traffic periods, causing 500 Internal Server Errors.","1. Simulate 100 concurrent requests
+2. Check logs for timeout errors",Linux Ubuntu 22.04,Critical,Performance Issue
+3,App crashes on login with special characters in username,"If a user tries to login with a username containing special characters like @, $, or %, the application immediately crashes with a null pointer exception.","1. Enter special characters in username field
+2. Click login","MacOS Sonoma, Safari 17",Critical,Crash/Error
+4,SQL injection vulnerability in user search input,"The search query in user controller is directly concatenated with input, allowing SQL injection.","1. Navigate to search
+2. Enter ' OR '1'='1' --","Windows 10, Firefox 119",Critical,Security Vulnerability
+5,Add export to Excel button in dashboard,We need a feature to export the bug tracking table to Excel format for offline analysis.,N/A,Any,Low,Feature Request
+6,API endpoint returns 404 for user profile retrieval,GET /api/users/profile returns 404 Not Found even for authenticated users.,"1. Login as user
+2. Send GET request to /api/users/profile",Any,High,Integration Failure
+7,Config key parsing fails for double quotes,"The config reader fails to parse keys that contain double quotes, raising a SyntaxError.","1. Set config key with double quote
+2. Start server",Any,Medium,Configuration Error
+8,User table balance column goes negative,A race condition in transaction endpoint allows wallet balance to drop below zero.,1. Send duplicate withdrawal requests concurrently,Any,Critical,Data Inconsistency

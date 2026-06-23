@@ -1,0 +1,98 @@
+Frontend (React):
+SUPABASE_URL = https://qernbleostndfqaapagu.supabase.co
+SUPABASE_PUBLISHABLE_KEY = sb_publishable_YOQxT5TexuQ0Dis1C4RiqQ_tWdnSmT4
+
+Backend (Node.js):
+SUPABASE_URL = https://qernbleostndfqaapagu.supabase.co
+SUPABASE_SECRET_KEY = sb_secret_IUFQ6fi2--aqjMd23ZqiOA_SSXvWsBI
+DATABASE_URL = postgresql://postgres:ALPHA_TECH@2026@db.qernbleostndfqaapagu.supabase.co:5432/postgres
+
+AI :
+SUPABASE_URL = https://qernbleostndfqaapagu.supabase.co
+SUPABASE_SECRET_KEY = sb_secret_IUFQ6fi2--aqjMd23ZqiOA_SSXvWsBI
+DATABASE_URL = postgresql://postgres:ALPHA_TECH@2026@db.qernbleostndfqaapagu.supabase.co:5432/postgres
+
+
+Hi team 👋
+
+I have completed the database setup in Supabase. Here’s what is available and how you should use it:
+
+🔗 Project Details
+
+* SUPABASE_URL: https://qernbleostndfqaapagu.supabase.co
+* Frontend → use Publishable Key
+* Backend/AI → use Secret Key (+ DATABASE_URL if needed)
+
+📊 Tables in Database:
+
+1. bugs
+
+* Stores all bug reports
+* Columns: id, title, description, status, severity, component, reporter_email, created_at
+
+👉 Use this table to:
+
+* Insert new bugs
+* Fetch bug list
+* Update bug status
+
+
+
+2. team_members
+
+* Stores team member details
+* Columns: id, name, email, expertise
+
+👉 Used for:
+
+* Assigning bugs
+* Matching expertise
+
+
+
+3. ai_results
+
+* Stores AI outputs
+* Columns: bug_type, priority, suggested_assignee_id, duplicate_of, confidence
+
+👉 AI team will use this for:
+
+* Bug classification
+* Priority prediction
+* Duplicate detection
+
+
+
+4. bug_assignments
+
+* Stores who is assigned to which bug
+* Columns: bug_id, assignee_id, assigned_at
+
+👉 Backend will use this for:
+
+* Assigning bugs to members
+
+
+
+🧑‍💻 What each team should do:
+
+Frontend (React):
+
+* Fetch bugs from "bugs" table
+* Show bug list
+* Create new bug (insert into bugs)
+
+Backend (Node.js):
+
+* Handle update/delete operations
+* Manage bug assignment
+* Connect bugs ↔ team_members
+
+AI (Python):
+
+* Analyze bug description
+* Store results in "ai_results"
+* (Optional) detect duplicate bugs
+
+
+
